@@ -2,10 +2,38 @@
 title: "r-exploring"
 ---
 
-## Quarto
+```{r}
+library(tidyverse)
+library(skimr)
+library(GGally)
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+```
+
+Exploring
 
 ```{r}
-1 + 1
+names(diamonds)
+dim(diamonds)
+summary(diamonds)
+head(diamonds)
+tail(diamonds)
+skimr::skim(diamonds)
 ```
+
+```{r}
+ggpairs(diamonds)
+```
+
+Basic ggplot
+
+```{r}
+ggplot(data = diamonds, aes(x = price, y = carat)) + geom_point()
+```
+
+Histogram
+
+```{r}
+ggplot(data = diamonds, aes(x = carat)) + geom_histogram()
+```
+
+\
